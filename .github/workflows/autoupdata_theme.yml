@@ -14,10 +14,12 @@ jobs:
         uses: actions/checkout@v3
         with:
           persist-credentials: false  # 禁用GITHUB_TOKEN凭证，以便可以使用git
+
       # Step 2: 克隆主题仓库
       - name: Clone Solitude Theme Repository
         run: |
           git clone --depth 1 https://github.com/everfu/hexo-theme-solitude.git solitude-theme
+
       # Step 3: 检查是否有更新（通过时间戳）
       - name: Check for Updates
         id: check_updates
@@ -31,26 +33,24 @@ jobs:
           # 比较时间戳，如果远程时间较新则进行更新
           if [ "$remote_commit_time" -gt "$local_commit_time" ]; then
             echo "发现有更新"
-            echo "::set-output name=update_needed::true"
+            echo "update_needed=true" >> $GITHUB_ENV
           else
             echo "没有更新"
-            echo "::set-output name=update_needed::false"
+            echo "update_needed=false" >> $GITHUB_ENV
           fi
+
       # Step 4: 只有当远程仓库有更新时，才进行覆盖操作
       - name: Copy and Overwrite Theme Files
-        if: steps.check_updates.outputs.update_needed == 'true'
+        if: env.update_needed == 'true'
         run: |
           cp -r --force solitude-theme/* ./themes/solitude/
+
       # Step 5: 提交更新并推送到你的仓库
       - name: Commit and Push Changes
-        if: steps.check_updates.outputs.update_needed == 'true'
+        if: env.update_needed == 'true'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "Update solitude theme to latest version" || echo "没有要提交的更改"
-<<<<<<< HEAD
-          git push origin ${{ github.ref }} || echo "推送失败，请检查仓库设置。"
-=======
-          git push origin ${{ github.ref }} || echo "推送失败，请检查仓库设置。"
->>>>>>> f02c0da (由 git bash 自动提交)
+          git push origin "${{ github.ref }}" || echo "推送失败，请检查仓库设置。"
