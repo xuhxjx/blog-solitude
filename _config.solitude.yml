@@ -45,7 +45,7 @@ nav:
       标签: /tags/ || fas fa-tags
     朋友:
       朋友圈: /moments/ || fas fa-wifi
-      有人链: /links/ || fas fa-user-group
+      友人链: /links/ || fas fa-user-group
       宝藏贴: javascript:travelling() || fas fa-gift
     常用:
       我的装备: /equipment/ || fas fa-laptop
