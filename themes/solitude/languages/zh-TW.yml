@@ -1,10 +1,13 @@
+framework_by: 框架：
+theme_by: 主題：
+
 more: 更多
 star: 喜歡這篇的人也看了
 random: 隨便逛逛
 upload: 發佈時間：
 totalk: 無需刪除空行，直接輸入評論即可
 loading: 加載中...
-day: ' 天'
+day: " 天"
 hot-tip: 多人互動
 
 # Language: 繁體中文 (台灣)
@@ -64,6 +67,7 @@ post:
   minread: 閱讀耗時
   ip: 作者IP歸屬地為
   pv: 文章熱度
+  min: 分
   comment: 評論數
   copyright:
     reprint: 本文是轉載或翻譯文章，版權歸原作者所有。轉載本文請聯繫原作者。
@@ -81,7 +85,6 @@ post:
     whatsapp: 分享到WhatsApp
   ai:
     title: 文章摘要
-    tip: 投訴
   nav:
     next: 下一篇
     prev: 上一篇
@@ -96,17 +99,18 @@ search:
   hit: 找到 ${hits} 條結果，用時 ${time} 毫秒
   placeholder: 輸入關鍵詞快速查找
   count: 共 <b>${count}<b> 條結果。
+  load: 加載中...
 
 head:
   noscript: 開啟JavaScript才能訪問本站哦~
 
 aside:
-  postcount: '文章數：'
-  pv: '瀏覽量：'
-  uv: '訪客數：'
-  runtime: '運行時間：'
-  updatetime: '最後更新：'
-  wordcount: '字數統計：'
+  postcount: "文章數："
+  pv: "瀏覽量："
+  uv: "訪客數："
+  runtime: "運行時間："
+  updatetime: "最後更新："
+  wordcount: "字數統計："
   toc: 文章目錄
   tagmore: 查看全部
   avatar: 頭像
@@ -116,9 +120,9 @@ aside:
   newpost: 最近發佈
   newcomment: 最近評論
   card:
-    posts: '累計文章數:'
-    tags: '標籤總數:'
-    categories: '分類總數:'
+    posts: "累計文章數:"
+    tags: "標籤總數:"
+    categories: "分類總數:"
 
 console:
   comment_tip: 互動
@@ -130,12 +134,14 @@ console:
   switch_keyboard: 鍵盤快捷鍵
   switch_music: 音樂開關
   archive_unit: 篇
+  archive_all: 全部文章
   recent_comment_more: 最近評論
   newest_comment:
     image: 圖片
     link: 鏈結
     code: 代碼
     emoji: 表情
+    empty: 暫無評論...
 
 sidebar:
   function: 功能
@@ -229,9 +235,9 @@ message:
   open: 顯示彈幕
 
 essay:
-  tip0: '- 已展開所有短文 -'
-  tip1: '- 只展示最近 #{count} 條短文 -'
-  link: '鏈結'
+  tip0: "- 已展開所有短文 -"
+  tip1: "- 只展示最近 #{count} 條短文 -"
+  link: "鏈結"
 
 rightside:
   show:
@@ -239,6 +245,7 @@ rightside:
     toc: 目錄
     comment: 評論
     top: 返回頂部
+    barrage: 彈
   hide:
     translate: 簡繁轉換
     mode: 顯示模式切換

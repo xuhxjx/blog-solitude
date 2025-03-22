@@ -1,9 +1,9 @@
 extends includes/layout
 
 block content
-    if theme.hometop.enable || (theme.says.home_mini && theme.says.enable)
+    if theme.hometop.enable || (theme.brevity.home_mini && theme.brevity.enable)
         #home_top
-            if theme.says.home_mini && theme.says.enable
+            if theme.brevity.home_mini && theme.brevity.enable
                 include ./includes/widgets/home/bbTimeList
             if theme.hometop.enable && is_home_first_page()
                 include ./includes/widgets/home/hometop
@@ -13,9 +13,7 @@ block content
                 include ./includes/widgets/home/categoryBar
             .recent-posts#recent-posts
                 if theme.comment.hot_tip.enable
-                    include ./includes/widgets/home/hot/index.pug
-                if theme.carousel && is_home_first_page()
-                    include ./includes/widgets/home/carousel.pug
+                    include ./includes/widgets/third-party/hot/index.pug
                 for post, index in page.posts.sort("-sticky" || "-date").data
                     include ./includes/widgets/home/postList
 

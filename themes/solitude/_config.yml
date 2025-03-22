@@ -1,11 +1,11 @@
 # ---------------------------
 # Hexo Theme Solitude
-# Author: Ever Fu
+# Author: 伍十七(@everfu)
 # Github: https://github.com/everfu/hexo-theme-solitude
 #
 # Guide: https://solitude.js.org
 # You can get more detailed help from the guide
-# 指南：https://solitude.js.org
+# 指南：https://solitude.js.org/zh
 # 你可以从指南中获取更详细的帮助
 #
 # sponsor: https://ko-fi.com/everfu
@@ -21,7 +21,7 @@ site:
   name:
     class: text # text / i_class / img
     custom: Solitude # Solitude / fas fa-ghost / /img/pwa/favicon.ico
-  icon: /img/pwa/favicon.ico # Site icon / 网站图标
+  icon: /img/pwa/favicon.png # Site icon / 网站图标
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -37,30 +37,29 @@ nav:
   # Menu
   # 菜单
   menu:
-    # Home: / # name: link
-    # Article: # name
-    #   Archives: /archives/ || fas fa-folder-closed # item name: link || icon
-    #   Categories: /categories/ || fas fa-clone
-    #   Tags: /tags/ || fas fa-tags
-    # Friends:
-    #   Moments: /moments/ || fas fa-wifi
-    #   Links: /links/ || fas fa-user-group
-    #   Treasure: javascript:travelling() || fas fa-gift
-    # Myself:
-    #   Equipment: /equipment/ || fas fa-laptop
-    #   Toobox: /tlink/ || fas fa-toolbox
-    #   Music: /music/ || fas fa-music
-    # About: /about/
+    # 首页: / # name: link
+    # 文库: # name
+    #   全部文章: /archives/ || fas fa-folder-closed # item name: link || icon
+    #   全部分类: /categories/ || fas fa-clone
+    #   全部标签: /tags/ || fas fa-tags
+    # 友链:
+    #   朋友圈: /moments/ || fas fa-wifi
+    #   友情链接: /links/ || fas fa-user-group
+    #   宝藏博主: javascript:travelling() || fas fa-gift
+    # 关于:
+    #   我的装备: /equipment/ || fas fa-laptop
+    #   在线工具: /tlink/ || fas fa-toolbox
+    #   音乐馆: /music/ || fas fa-music
 
   # Right button
   # 右侧按钮
   right:
     random: false # Random article / 随机文章按钮
     custom:
-    #  - name: Start # name
-    #    url: https://www.travellings.cn/go.html # Jump link
-    #    icon: fas fa-train # Icon
-    #    onclick: # Click event
+    #  - name: 开往 # 名字
+    #    url: https://www.travellings.cn/go.html # 跳转链接
+    #    icon: fas fa-train # 图标
+    #    onclick: # 点击事件
     #    id: travellings_button # id
 # --------------------------- end ---------------------------
 
@@ -70,8 +69,12 @@ nav:
 hometop:
   enable: false
   banner:
-    title: # Tranquility <br>and love life / 宁静致远 <br> 热爱生活 # Title
-    url: Hexo Theme Solitude
+    title: 分享技术<br >与科技生活 # 大字
+    desc:
+      一个热爱生活的人 # 小字
+      # - 我只是一个普通的程序员
+      # - 但我有一个不平凡的梦想
+      # - 我希望能够改变世界
     icon:
       # HTML: # name
       #   img: https://i.postimg.cc/vBWVnY8q/html.png # url
@@ -94,6 +97,7 @@ hometop:
   group:
     # 热门: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
   recommendList:
+    enable: true
     sup: 置顶
     title: Solitude 官方文档
     url: https://solitude.js.org/
@@ -109,8 +113,8 @@ carousel: false
 # Aside
 # 侧边栏
 aside:
-  # Values: about (info card), newestPost (latest article), allInfo (website information), flip (official account QR code), newest_comment (latest comment)
-  # 值: about(信息卡), newestPost(最新文章), allInfo(网站信息), flip(官方账号二维码), newest_comment(最新评论)
+  # Values: about (info card), newestPost (latest article), allInfo (website information), newest_comment (latest comment)
+  # 值: about(信息卡), newestPost(最新文章), allInfo(网站信息), newest_comment(最新评论)
 
   # Sticky: Fixed position / noSticky: Not fixed position
   # Sticky: 固定位置 / noSticky: 不固定位置
@@ -129,46 +133,29 @@ aside:
   # --------------------------- start ---------------------------
   # Information card
   # 信息卡
-  card:
-    style: 0 # 0: default 1: style 1 2: style 2
+  my_card:
     author:
-      img: /img/avatar.avif # url
+      img: /img/logo.png # url
       sticker: # url, 24x24 size
-    url: /about/ # link / 点击头像跳转链接
-    background: # https://s3.qjqq.cn/47/663af296b85f4.webp!color # Background image(Invalid if style is 0)
-    # Content(Invalid if style is 0)
-    # 内容(Style 0 无效)
+    # 介绍 / Introduction
+    description: 只有迎风，风筝才能飞得更高。
+    # 内容 / Content
     content: # 这是我的博客 / This is my Blog
-    content2: # 一个热爱生活的人 / A person who loves life
-    # Style 2 is invalid
-    # Style 2 无效
-    sayhello:
-      morning: ✨ Good morning. It's a new day
-      noon: It's time for a midday break
-      afternoon: Tea time. 🍵
-      night: early bedtime
-      goodnight: Good night 😴
-    # Style 2 is invalid, Triggered when sayhello is clicked.
-    # Style 2 无效, 点击 sayhello 时触发
-    sayhello2:
-      # - You'll make it.
-      # - You're gonna make it.
-      # - Good luck, stranger.
+    state:
+      morning: ✨ 早上好，新的一天开始了
+      noon: 🍲 午餐时间
+      afternoon: 🌞 下午好
+      night: 早点休息
+      goodnight: 晚安 😴
+    witty_words:
+      # - 你可以的
+      # - 你一定可以的
+      # - 祝你好运，陌生人
     # social
     # 社交信息图标
     information:
     #  Github: https://github.com/everfu || fab fa-github # Name: link || icon
     #  Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
-  # --------------------------- end ---------------------------
-
-  # --------------------------- start ---------------------------
-  # Sidebar QR code component
-  # 侧边栏二维码组件
-  flip:
-    favicon: # url (favicon)
-    face: # url (QR code)
-    backface: # url (QR code)
-    backcolor: "var(--efu-blue)" # Background color
   # --------------------------- end ---------------------------
 
   # --------------------------- start ---------------------------
@@ -189,14 +176,6 @@ aside:
     # Highlighted tags
     highlight_list:
       # - Hexo
-  # --------------------------- end ---------------------------
-
-  # --------------------------- start ---------------------------
-  # Archive
-  # 归档
-  archive:
-    enable: false
-    type: "month" # month: by month / year: by year
   # --------------------------- end ---------------------------
 
   # --------------------------- start ---------------------------
@@ -255,9 +234,6 @@ page:
 # 文章默认设置
 post:
   default:
-    # The cover of the article is displayed
-    # 文章封面显示
-    top_cover: true
     # Default image when no cover is set
     # 未设置封面时的默认图片
     cover:
@@ -269,17 +245,18 @@ post:
     # 版权
     copyright:
       enable: true
-      author:
-        url: /about/ # Author link
-        # Default use site.icon
-        # 默认使用 site.icon
-        img:
+      author: /img/logo.png # url
       # License
       # 许可证
       license: CC BY-NC-SA 4.0
       # License link
       # 许可证链接
-      licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
+      licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans
+  # Article Local AI
+  # 文章本地AI
+  ai:
+    enable: false
+    modelName: 小七 GPT
   # Article meta information
   # 文章元信息
   meta:
@@ -380,7 +357,7 @@ font:
   code-font-size: 16px
   # Global font
   # 全局字体
-  font-family: "PingFang SC, Hiragino Sans GB, Microsoft YaHei"
+  font-family: "PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif"
   # Code font
   # 代码字体
   code-font-family: '"monospace", monospace'
@@ -521,7 +498,7 @@ console:
     tags: true
     # Archives
     # 归档
-    archive: true
+    archive: "month" # month: by month / year: by year
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -548,40 +525,51 @@ rightside:
 # Footer
 # 页脚
 footer:
-  # Information social icon
+  # 社交图标
   information:
     author: false # img url / false
     left:
-      # Github: https://github.com/everfu || fab fa-github # Name: link || icon
-      # Mail: mailto:o@everfu.cn || fab fa-envelope
+      # Github: https://github.com/everfu || fab fa-github # 名称: 链接 || 图标
+      # Mail: mailto:o@everfu.org || far fa-envelope
     right:
       # Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
       # Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
+  # 友情链接
   group:
-    # Navigation:
+    # 导航:
     #   Archives: /archives/
     #   Categories: /categories/
     #   Tags: /tags/
-    # Arrangement:
+    # 排列:
     #   Cookies: /cookies/
     #   Privacy: /privacy/
     #   Copyright: /copyright/
 
-  # Random link
   # 随机友链
-  randomlink: false # Random link
-  # License
-  license: # https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh # License
+  randomlink: false # 随机友链
 
-  # Footer information text
+  # 备案
+  beian:
+    # - name: 湘公网安备43048102000175号
+    #   icon: https://beian.mps.gov.cn/img/logo01.dd7ff50e.png
+    #   url: https://beian.mps.gov.cn/#/query/webSearch
+    # - name: 湘ICP备2024080357号-1
+    #   url: https://beian.miit.gov.cn/
+
   # 页脚信息文字
-  # Please do not delete the theme information, this is respect for the author
-  # 请不要删除主题信息，这是对作者的尊重
   links:
-    - name: Theme
-      url: https://github.com/everfu/hexo-theme-solitude
     # - name: RSS
     #   url: /atom.xml
+    # - name: License
+    #   url: https://github.com/everfu/hexo-theme-solitude/blob/main/LICENSE
+    #   icon:
+    #     - fas fa-copyright
+    #     - fab fa-creative-commons-by
+    #     - fab fa-creative-commons-nc
+    #     - fab fa-creative-commons-nd
+    # - name: boringbay
+    #   url: https://boringbay.com/
+    #   img: https://boringbay.com/api/badge/www.efu.me
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -599,7 +587,7 @@ errorpage:
 # can only use NetEase Cloud Music, QQ Music and other music platforms supported by the mainland China region,
 # the subsequent consideration of the use of JSON files to store music information and customize the implementation of the third-party API does not depend on the page.
 # Music Page
-meting_api: "https://meting.everfu.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" # Custom API
+meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" # Custom API
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -608,11 +596,12 @@ meting_api: "https://meting.everfu.cn/?server=:server&type=:type&id=:id&auth=:au
 capsule:
   enable: false
   # 歌单 ID / 单曲 ID
-  id: 8407304077
+  id: 5144842535
   # 服务商：netease / qq / xiami / kugou / baidu
   server: netease
   # 类型：playlist / song
   type: playlist
+  volume: 0.8
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -623,16 +612,16 @@ capsule:
 keyboard:
   enable: false
   list:
-    # - name: Close Keyboard
+    # - name: 关闭快捷菜单
     #   key: K
     #   func: keyboard
-    # - name: Open Console
+    # - name: 打开控制台
     #   key: A
     #   sco: showConsole
-    # - name: Play/Pause Music
+    # - name: 播放/暂停音乐
     #   key: M
     #   sco: musicToggle
-    # - name: Open Links
+    # - name: 打开友链
     #   key: L
     #   url: /links/
 # --------------------------- end ---------------------------
@@ -645,7 +634,7 @@ lazyload:
   # post, site
   field: site
   # 加载时替换图
-  placeholder: /img/loading.avif
+  placeholder: ""
   # 加载失败替换图
   errorimg: /img/error_load.avif
 # --------------------------- end ---------------------------
@@ -657,6 +646,9 @@ loading:
   # Full screen loading
   # 全屏加载
   fullpage: false
+  # Loading icon, default is siteicon
+  # 加载图标，不写默认siteicon
+  favicon: /img/favicon.png
   # Pace loading
   # Pace 加载
   pace: true
@@ -702,7 +694,7 @@ memorial:
   date:
   #  - 7-7
   #  - 9-18
-  #  - 12-13 # 国家公祭日
+  #  - 12-13
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -804,6 +796,9 @@ comment:
   # Whether to display the comment count
   # 显示评论数
   count: false
+  # Sidebar displays the total number of comments
+  # Sidebar 显示总评论数
+  sidebar: false
   # PV
   pv: false
   # Avatar
@@ -862,17 +857,27 @@ giscus:
 # Search
 search:
   enable: false
-  # type: 使用的搜索引擎 / search engine
-  type: local # local / algolia
+  type: # local / algolia / docsearch
   tags:
     # - Solitude
     # - Hexo
+  # Algolia
   algolia:
     # hits:
     #   per_page: 6
+
+  # Local search
   local:
     preload: false
     CDN: # url: search.xml
+
+  # DocSearch
+  # https://docsearch.algolia.com/
+  docsearch:
+    appId:
+    apiKey:
+    indexName:
+    option:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -881,7 +886,7 @@ search:
 music:
   enable: false
   # 歌单 ID / 单曲 ID
-  id: 1994908354
+  id: 5144842535
   # 服务商：netease / qq / xiami / kugou / baidu
   server: netease
   # 类型：playlist / song
@@ -890,6 +895,8 @@ music:
   volume: 0.8
   # 是否自动播放
   mutex: true
+  # 播放方式：list / random
+  order: list
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -905,11 +912,12 @@ envelope:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Says Page
+# Brevity Page
 # 即可短文
-says:
+brevity:
   enable: false
   home_mini: false
+  music: false
   page: /essay/
   style: 1
   strip: 30
@@ -923,7 +931,6 @@ recent_comments:
   limit: 50 # ⚠️waline 仅支持最大50条评论 / ⚠️waline only supports a maximum of 50 comments
   cache: 0.2 # 1 = 1天 / 1 = 1 day
   page: /recentcomments/ # 最近评论页面 / recent comments page
-  img: /img/recent_c.avif # 中控台显示图片（不填不显示） / image displayed in the console
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -932,24 +939,6 @@ busuanzi: false
 # 0: Original / 1: Custom
 # 0: 原版 / 1: 自定义版
 busuanzi_use: 0
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# This part is only supported in mainland China, and we will consider supporting ChatGPT Key in the future.
-# 该部分仅支持中国大陆，后续会考虑支持 ChatGPT Key。
-tianli_talk:
-  enable: false
-  title: 智能客服与搜索 # title
-  key: # key
-  option:
-post_ai:
-  enable: false
-  modelName: GPT 4
-  key:
-  talk: # 我是 Efu 开发的摘要生成助理EfuGPT，EfuGPT在静态部署时进行摘要的撰写，并且在访客访问时通过EfuCorrection转译后的文本摘要实现工具。我在这里只负责已经生成的摘要显示，你无法与我直接沟通，但我可以回答一些预设的问题。
-  randomPost: false
-  report: https://solitude.js.org
-  tips: # 此内容根据文章生成，并经过人工审核，仅用于文章内容的解释与总结
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -980,30 +969,42 @@ google_adsense:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Do not modify unless necessary
 # 非必要请勿修改
 CDN:
   internal: local # local / cdnjs / jsdelivr / unpkg / custom
-  third_party: cdnjs # cdnjs / jsdelivr / unpkg / custom
-  version: true # Whether to use the version number
-  custom_format: //open.lightxi.com/cdnjs/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file} # Custom format
-  # Directly override the default CDN link (highest priority)
+  third_party: custom # cdnjs / jsdelivr / unpkg / custom
+  version: true # 是否使用版本号
+  custom_format: https://fastly.jsdelivr.net/npm/${name}@${version}/${min_file} # 自定义格式
+  # 直接覆盖默认 CDN 链接（优先级最高）
   options:
     # algolia_search:
+    # aplayer_css:
+    # aplayer_js:
+    # artalk_css:
+    # artalk_js:
+    # blueimp_md5:
+    # busuanzi_js:
+    # chart_js:
+    # color_thief:
+    # fancyapps_css:
+    # fancyapps_ui:
+    # fontawesome:
     # instantsearch:
-    # pjax:
-    # twikoo:
-    # waline_js:
-    # waline_css:
     # katex:
     # katex_copytex:
     # lazyload:
-    # aplayer_css:
-    # aplayer_js:
+    # medium_zoom:
+    # mermaid_js:
     # meting_js:
     # pace_js:
+    # pjax:
+    # qrcode:
+    # snackbar:
     # swiper_css:
     # swiper_js:
-    # busuanzi_js:
-    # snackbar_js:
+    # twikoo:
+    # typeit_js:
+    # valine:
+    # waline_css:
+    # waline_js:
 # --------------------------- end ---------------------------

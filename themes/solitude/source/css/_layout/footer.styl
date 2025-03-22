@@ -79,28 +79,27 @@
         background var(--efu-main)
         transform scale(1.1)
 
-    if hexo-config('footer.information.author')
-      .footer_mini_logo
-        width 50px
-        height 50px
-        margin 0 1rem
-        cursor pointer
-        transition cubic-bezier(0, 0, 0, 1.29) .5s
-        user-select none
-        border-radius 50px
-        overflow hidden
-        +maxWidth768()
-          display none
+    .footer_mini_logo
+      width 50px
+      height 50px
+      margin 0 1rem
+      cursor pointer
+      transition cubic-bezier(0, 0, 0, 1.29) .5s
+      user-select none
+      border-radius 50px
+      overflow hidden
+      +maxWidth768()
+        display none
 
-        &:hover
-          transform scale(1.2)
+      &:hover
+        transform scale(1.2)
 
   #st-footer
     display flex
     flex-direction row
     width 100%
     max-width 1200px
-    justify-content space-between
+    justify-content space-evenly
     flex-wrap wrap
     margin 1rem auto 3rem
     padding 0 1rem
@@ -164,7 +163,6 @@
       margin-left 8px
 
   /#footer-bar
-    padding 1rem
     color var(--efu-fontcolor)
     margin-top 1rem
     background var(--efu-secondbg)
@@ -183,40 +181,76 @@
       flex-wrap wrap
       align-items center
       line-height 1
+      padding 1rem 1.5rem
+      +maxWidth768()
+        justify-content center
+        gap 8px
 
     .footer-bar-left
       display flex
-      flex-wrap wrap
-      min-height 32px
-      align-items center
+      gap 8px
+      flex-direction column
+      +maxWidth768()
+        align-items center
 
       .copyright
         display flex
         flex-direction row
         align-items center
-        padding 0 8px
-        margin 0 4px
 
         .footer-bar-link
           margin 0
+      .beian-group
+        display flex
+        gap 8px
+        flex-wrap wrap
+        +maxWidth768()
+          justify-content center
+
+        a:hover
+          background 0 0
+          color var(--efu-main)
+
+        .beian-icon
+          height 14px
+          min-width 13px
+          min-height 14px
+
+        .footer-bar-link
+          font-size 12px
+          font-weight 400
+          color var(--efu-secondtext)
+          padding 0
+          margin 0
+          display flex
+          align-items center
+          gap 4px
+        
 
     .footer-bar-link
       margin 0 4px
       color var(--efu-fontcolor)
       font-size .8rem
-      padding 8px
-      border-radius 12px
       font-weight 700
       white-space nowrap
+      padding 8px
+      border-radius 32px
+      line-height 1
+      display flex
+      align-items center
+      gap .5rem
 
-      &.cc
-        margin-right 0
+      .author-avatar
+        width 20px
+        border-radius 20px
+        min-height 20px
+        min-width 20px
 
-        i
-          font-size 18px
-
-          &:not(:last-child)
-            margin-right .5rem
+      i
+        font-size 14px
+      
+      img
+        height 20px
 
       &:hover
         color var(--efu-theme)

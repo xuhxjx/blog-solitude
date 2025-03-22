@@ -1,13 +1,12 @@
-#article-container
+.article-container
   overflow-wrap break-word
   +maxWidth768()
     overflow hidden
-    padding .5rem
 
   .post &
     padding 1rem 2rem
     +maxWidth768()
-      padding .5rem
+      padding .5rem .5rem 1rem .5rem
 
   iframe
     border-radius 12px
@@ -21,16 +20,6 @@
 
     &.fancybox
       border-bottom none
-
-    &:not(.fancybox)
-      padding 0 4px
-
-      &:hover
-        border 0
-        text-decoration none
-        color var(--efu-white)
-        border-radius 4px
-        background var(--efu-main)
 
   .table-wrap
     margin 1rem 0
@@ -66,23 +55,23 @@
     font-size .9rem
     line-height 1.7
     font-weight 400
-    margin 1rem 0
-    text-align left
+    margin .5rem 0
+    text-align justify
     letter-spacing .6px
 
     a
       &:not(.fancybox)
         text-decoration none
-        border-bottom 2px dotted var(--efu-lighttext)
-        color var(--efu-fontcolor)
+        border none
+        color var(--efu-theme)
         font-weight 700
         padding 0 4px
-        border-radius 4px 4px 0 0
+        background linear-gradient(to top, var(--efu-theme-op), var(--efu-theme-op)) no-repeat bottom / 100% .1em
+        transition all .2s
 
         &:hover
-          color var(--efu-white)
           border-radius 4px
-          background var(--efu-main)
+          background-size: 100% 100%
 
   blockquote
     p
@@ -91,13 +80,14 @@
       font-size 15px
 
   code:not([class*='language-'])
-    color var(--efu-white)
-    padding 0.2rem 0.4rem
+    color var(--efu-fontcolor)
+    padding .4em
     border-radius 4px
-    margin 0 4px
-    background var(--efu-pink)
-    line-height 2
+    font-size 12px
+    background var(--efu-card-bg)
+    line-height 1.5
     box-shadow var(--efu-shadow-border)
+    border var(--style-border)
 
   img:not(.post_bg)
     border-radius 12px
@@ -135,16 +125,14 @@
         padding 0.2em 0.2em 0.2em 1.4em
 
         &:before
-          margin 0
-          top .9em
-          width .2em
-          height .2em
-          border-radius 50%
+          top .78em
+          width .42em
+          height .42em
+          border-radius .42em
           background 0 0
+          border .21em solid var(--efu-lighttext)
           content ""
-          line-height .2em
-          border 0.21em solid var(--efu-lighttext)
-          background var(--efu-lighttext)
+          line-height .42em
 
   ol
     > li:before

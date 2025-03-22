@@ -18,7 +18,7 @@ script.
 
     const keyboard_addKeydown = (e) => {
         const keyboards = !{JSON.stringify(list)};
-        if (e.keyCode === 16) {
+        if (e.key === 'Shift') {
             document.getElementById('keyboard-tips').classList.add('show');
         }
 
@@ -61,5 +61,6 @@ script.
     var sco_keyboards = localStorage.getItem('keyboard') === 'true'
     if (sco_keyboards) {
         openKeyboard();
-        document.getElementById('consoleKeyboard').classList.add('on');
+        let keyboard = document.getElementById('consoleKeyboard');
+        keyboard?.classList.add('on');
     }

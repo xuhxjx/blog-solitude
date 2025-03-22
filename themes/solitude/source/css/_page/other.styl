@@ -100,7 +100,7 @@ div#banners
 
     .tags-group-wrapper
       margin-top: 7rem
-      animation: rowleft 120s linear infinite
+      animation: rowleft-quarter 30s linear infinite
       display flex
 
       +maxWidth768()
@@ -214,6 +214,7 @@ div#banners
   .card-content
     position absolute
     width 100%
+    z-index 2
     height 100%
     top 0
     left 0
@@ -234,7 +235,7 @@ div#banners
 
       .banner-button
         height 40px
-        width 118px
+        padding .5rem .7rem
         border-radius 20px
         justify-content center
         background var(--efu-black-op)

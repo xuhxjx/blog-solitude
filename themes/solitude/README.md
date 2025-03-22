@@ -1,86 +1,67 @@
-English丨[简体中文](README_zh-Hans.md)丨[繁体中文](README_zh-Hant.md)
+[English](README_en-US.md)丨简体中文丨[繁体中文](README_zh-Hant.md)
 
 <div align="center">
 
-   <h1>Solitude</h1>
+<img width="70%" src=".github/screenshot.avif" />
 
-   An elegant Hexo theme that supports lazy loading, PWA, Latex, and multiple commenting systems.
+一款优雅的 Hexo 主题，支持懒加载、PWA、Latex 以及多种评论系统。
 
-   Theme design is fully licensed by [@张洪Heo](https://github.com/zhheo).
+主题设计由 [@张洪Heo](https://github.com/zhheo) 全权授权
 
-![npm package](https://img.shields.io/npm/v/hexo-theme-solitude?style=for-the-badge)
-![license](https://img.shields.io/github/license/everfu/hexo-theme-solitude?color=FF5531&style=for-the-badge)
-[![Stars](https://img.shields.io/github/stars/everfu/hexo-theme-solitude?style=for-the-badge)](https://github.com/everfu/hexo-theme-solitude/stargazers)
-[![NPM all downloads](https://img.shields.io/npm/dy/hexo-theme-solitude?color=white&style=for-the-badge)](https://www.npmjs.com/package/hexo-theme-solitude)
+![npm package](https://img.shields.io/npm/v/hexo-theme-solitude)
+![license](https://img.shields.io/github/license/everfu/hexo-theme-solitude?color=FF5531)
+[![Stars](https://img.shields.io/github/stars/everfu/hexo-theme-solitude)](https://github.com/everfu/hexo-theme-solitude/stargazers)
+[![NPM all downloads](https://img.shields.io/npm/d18m/hexo-theme-solitude
+)](https://www.npmjs.com/package/hexo-theme-solitude)
 
-![hexo version](https://img.shields.io/badge/hexo-7.0.0+-blue?logo=hexo&logoColor=white&style=for-the-badge)
-![node version](https://img.shields.io/badge/node-14.0.0+-white?logo=node.js&logoColor=white&style=for-the-badge)
+![hexo version](https://img.shields.io/badge/hexo-7.0.0+-blue?logo=hexo&logoColor=white)
+![node version](https://img.shields.io/badge/node-14.0.0+-white?logo=node.js&logoColor=white)
+![JetBrains](https://img.shields.io/badge/jetbrains-support-white?logo=jetbrains)
 
-![page view](https://komarev.com/ghpvc/?username=hexo-theme-solitude&abbreviated=true&base=12345&style=for-the-badge)
-[![discord](https://img.shields.io/discord/1266610921942548553?style=for-the-badge&logo=discord&label=discord&logoColor=white)](https://discord.gg/HZXAnK4Sut)
-![JetBrains](https://img.shields.io/badge/jetbrains-support-black?logo=jetbrains&style=for-the-badge)
-
-[Docs](https://solitude.js.org/)丨[Preview](https://solitude.js.org/preview/)丨[Author](https://blog.everfu.cn/)
-
-</div>
-
-<div style="width: 80%; margin: 0 auto">
-
-![Screenshot](.github/screenshot.avif)
+![page view](https://komarev.com/ghpvc/?username=hexo-theme-solitude&color=blue)
+![jsdelivr](https://img.shields.io/jsdelivr/npm/hd/hexo-theme-solitude
+)
+![npm publish](https://img.shields.io/github/actions/workflow/status/everfu/hexo-theme-solitude/npm-publish.yml)
 
 </div>
 
-## Features
+## 特性
 
-- Page lazy loading (Pjax), image lazy loading (LazyLoad), offline application (PWA)
-- Comments (Twikoo, Waline, Valine, Artalk, Giscus), supporting dual comments
-- Day and night mode switch (ColorMode)
-- Lightbox (medium-zoom, fancybox)
-- Mathematical formulas (Latex)
-- Special pages: Moments, My Equipment, Online Tools, Music Library, Friends' Links, Photo Album, Douban Page, Danmaku Message Board
-- Article features: AI Summary, Code Highlighting
+- 页面懒加载（Pjax）、图片懒加载（LazyLoad）、离线应用（PWA）
+- 评论(Twikoo、Waline、Valine、Artalk、Giscus)，支持双评论
+- 昼夜切换(ColorMode)
+- 灯箱(medium-zoom、fancybox)
+- 数学公式(Latex)
+- 特色页面：即刻短文、我的装备、在线工具、音乐馆、友链鱼塘、相册页、豆瓣页、弹幕留言页
+- 文章功能：AI 摘要、代码高亮
 
-## Todo
+> 如有问题请提 [issue](https://github.com/everfu/hexo-theme-solitude/issues)
 
-- [X] Mobile directory support.
-- [X] Add a bottom right sidebar.
+## 应用
 
-> If you have any questions, please issue an [issue](https://github.com/everfu/hexo-theme-solitude/issues)
+1. 使用 NPM 包进行安装
 
-## Setup
-
-1. Use the NPM package
       ```bash
       npm i hexo-theme-solitude
       ```
-2. Apply
+
+2. 应用主题
+
       ```yaml
       theme: solitude
       ```
 
-Check out the [Documentation](https://solitude.js.org/) for more information.
+前往 [文档](https://solitude.js.org/zh/) 获取更多信息。
 
-## Sponsors
+## 社区
 
-<div align="center">
+[![Discord](https://img.shields.io/discord/1266610921942548553?logo=discord&label=discord&logoColor=white)](https://discord.gg/HZXAnK4Sut)
+[![QQ 群](https://img.shields.io/badge/QQ%20群-948375336-FFD700?logo=Tencent-QQ&logoColor=white)](https://qm.qq.com/q/mxfomMvJPG)
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W1YSMOK)
+## 版权
 
-</div>
+> 二次创作请保留主题版权信息
 
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/efuo/static/sponsors.svg' alt="sponsor"/>
-  </a>
-</p>
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude.svg?type=small)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude?ref=badge_large)
 
-## Community
-
-[![Discord](https://img.shields.io/discord/1266610921942548553?style=for-the-badge&logo=discord&label=discord&logoColor=white)](https://discord.gg/HZXAnK4Sut)
-[![QQ Group](https://img.shields.io/badge/QQ%20Group-948375336-FFD700?logo=Tencent-QQ&logoColor=white&style=for-the-badge)](https://qm.qq.com/q/mxfomMvJPG)
-
-## License
-
-[MIT](./LICENSE) License &copy; 2023-PRESENT [一小只托尼](https://github.com/everfu)
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvalor-x%2Fhexo-theme-solitude?ref=badge_large)
+[Apache-2.0](./LICENSE) License &copy; 2025-至今 [伍十七](https://github.com/everfu)
