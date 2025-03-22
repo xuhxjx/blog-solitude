@@ -1,56 +1,57 @@
-name: Update Solitude Theme
+name: 同步 Solitude 主题
 
 on:
   schedule:
-    - cron: "0 0 * * 0"  # 每周日运行一次
-  workflow_dispatch:  # 手动触发
+    - cron: '0 2 * * 0'  # 每周日北京时间上午 10:00 运行（UTC 时间 2:00）
+  workflow_dispatch:  # 允许手动触发
 
 jobs:
-  update_theme:
+  sync-theme:
     runs-on: ubuntu-latest
+
     steps:
-      # Step 1: 检出你自己的仓库
-      - name: Checkout Your Repository
+      - name: 检出 blog-solitude 仓库
         uses: actions/checkout@v3
         with:
-          persist-credentials: false  # 禁用GITHUB_TOKEN凭证，以便可以使用git
+          repository: yutianqq/blog-solitude
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: blog-solitude
 
-      # Step 2: 克隆主题仓库
-      - name: Clone Solitude Theme Repository
-        run: |
-          git clone --depth 1 https://github.com/everfu/hexo-theme-solitude.git solitude-theme
+      - name: 检出 hexo-theme-solitude 仓库
+        uses: actions/checkout@v3
+        with:
+          repository: everfu/hexo-theme-solitude
+          path: hexo-theme-solitude
 
-      # Step 3: 检查是否有更新（通过时间戳）
-      - name: Check for Updates
-        id: check_updates
+      - name: 检查是否有更新
+        id: check-update
         run: |
-          # 获取远程仓库最新提交的时间戳
-          cd solitude-theme
-          remote_commit_time=$(git log -1 --format=%ct)
-          cd ..        
-          # 获取你仓库中 `themes/solitude` 目录最新提交的时间戳
-          local_commit_time=$(git log -1 --format=%ct -- ./themes/solitude)
-          # 比较时间戳，如果远程时间较新则进行更新
-          if [ "$remote_commit_time" -gt "$local_commit_time" ]; then
-            echo "发现有更新"
-            echo "update_needed=true" >> $GITHUB_ENV
+          cd hexo-theme-solitude
+          REMOTE_COMMIT=$(git rev-parse HEAD)
+          cd ../blog-solitude/themes/solitude
+          LOCAL_COMMIT=$(git rev-parse HEAD 2>/dev/null || echo "无本地提交记录")
+          if [ "$REMOTE_COMMIT" != "$LOCAL_COMMIT" ]; then
+            echo "检测到 hexo-theme-solitude 有更新，将同步文件。"
+            echo "has_update=true" >> $GITHUB_OUTPUT
           else
-            echo "没有更新"
-            echo "update_needed=false" >> $GITHUB_ENV
+            echo "hexo-theme-solitude 无更新，无需同步。"
+            echo "has_update=false" >> $GITHUB_OUTPUT
           fi
 
-      # Step 4: 只有当远程仓库有更新时，才进行覆盖操作
-      - name: Copy and Overwrite Theme Files
-        if: env.update_needed == 'true'
+      - name: 同步主题文件
+        if: steps.check-update.outputs.has_update == 'true'
         run: |
-          cp -r --force solitude-theme/* ./themes/solitude/
+          mkdir -p blog-solitude/themes/solitude
+          cp -r hexo-theme-solitude/* blog-solitude/themes/solitude/
+          echo "已同步 hexo-theme-solitude 最新文件到 blog-solitude/themes/solitude 目录。"
 
-      # Step 5: 提交更新并推送到你的仓库
-      - name: Commit and Push Changes
-        if: env.update_needed == 'true'
+      - name: 提交并推送更改
+        if: steps.check-update.outputs.has_update == 'true'
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Update solitude theme to latest version" || echo "没有要提交的更改"
-          git push origin "${{ github.ref }}" || echo "推送失败，请检查仓库设置。"
+          cd blog-solitude
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add themes/solitude
+          git commit -m "同步 everfu/hexo-theme-solitude 主题：$(date -d '+8 hours' +'%Y-%m-%d')"
+          git push
+          echo "已提交并推送更改至 blog-solitude 仓库。"
