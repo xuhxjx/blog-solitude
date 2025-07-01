@@ -1,5 +1,5 @@
 ---
-title: 测试
+title: 掌握前端：2025 年及以后的必备技能
 data: 2025-7-01  # 文章发布时间
 updated: 2025-7-01 # 最后更新时间
 description: 首测Bolg                 
